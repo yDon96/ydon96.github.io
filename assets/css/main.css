@@ -84,7 +84,10 @@ input, select, textarea {
 
 	body {
 		background: #fff;
-		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -204,7 +207,8 @@ input, select, textarea {
 		height: 100%;
 		left: 0;
 		opacity: 0;
-		position: fixed;
+		/*TODO:Remove*/
+		/* position: fixed; */
 		top: 0;
 		width: 100%;
 	}
@@ -228,11 +232,12 @@ input, select, textarea {
 
 		background: #348cb2 url("images/bg.jpg") bottom left;
 		background-repeat: repeat-x;
-		height: 100%;
 		left: 0;
 		opacity: 1;
-		position: fixed;
 		top: 0;
+		/*Changed here*/
+		height: 100vh;
+		position: absolute;
 	}
 
 	@-moz-keyframes bg {
@@ -356,23 +361,25 @@ input, select, textarea {
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
-		height: 100%;
 		left: 0;
 		opacity: 0;
-		position: fixed;
 		top: 0;
 		width: 100%;
+		/*Changed here*/
+		height: 100vh;
+		position: absolute;
+
 	}
 
 /* Main */
 
 	#main {
-		height: 100%;
 		left: 0;
-		position: fixed;
 		text-align: center;
 		top: 0;
 		width: 100%;
+		/*Changed here*/
+		height: 100vh;
 	}
 
 		#main:before {
