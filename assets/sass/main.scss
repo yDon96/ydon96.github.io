@@ -23,6 +23,22 @@
 
 // Mixins.
 
+	@mixin color($p) {
+		@include color-typography($p);
+		@include color-box($p);
+		@include color-button($p);
+		@include color-form($p);
+		@include color-icon($p);
+		@include color-list($p);
+		@include color-section($p);
+		@include color-table($p);
+		@include color-banner($p);
+		@include color-spotlight($p);
+		@include color-gallery($p);
+		@include color-items($p);
+		@include color-index($p);
+	}
+
 	@mixin bg($width) {
 		@include keyframes('bg') {
 			0%		{ @include vendor('transform', 'translate3d(0,0,0)'); }
@@ -126,7 +142,10 @@
 
 	body {
 		background: _palette(bg);
-		overflow: hidden;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		-ms-overflow-style: scrollbar;
+
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -194,7 +213,6 @@
 		height: 100%;
 		left: 0;
 		opacity: 0;
-		position: fixed;
 		top: 0;
 		width: 100%;
 	}
@@ -210,10 +228,10 @@
 		background: _misc(bg);
 
 		background-repeat: repeat-x;
-		height: 100%;
+		height: 100vh;
 		left: 0;
 		opacity: 1;
-		position: fixed;
+		position: absolute;
 		top: 0;
 	}
 
@@ -233,10 +251,10 @@
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
-		height: 100%;
+		height: 100vh;
 		left: 0;
 		opacity: 0;
-		position: fixed;
+		position: absolute;
 		top: 0;
 		width: 100%;
 	}
@@ -244,9 +262,8 @@
 /* Main */
 
 	#main {
-		height: 100%;
+		height: 100vh;
 		left: 0;
-		position: fixed;
 		text-align: center;
 		top: 0;
 		width: 100%;
@@ -381,6 +398,15 @@
 		width: 100%;
 	}
 
+
+/* Section-Container */
+
+	.section-container {
+		background: _palette(fg); 
+		min-height:100vh; 
+		width: 100%;
+	}
+
 /* Wide */
 
 	@include breakpoint('<=wide') {
@@ -476,3 +502,10 @@
 			}
 
 	}
+
+/* Imports */
+	@import 'components/image';
+	@import 'components/banner';
+	@import 'components/actions';
+	@import 'components/button';
+
