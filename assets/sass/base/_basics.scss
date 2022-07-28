@@ -1,0 +1,89 @@
+/* Basic */
+
+	// Set box model to border-box.
+	// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+    html {
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+body {
+    background: _palette(bg);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: scrollbar;
+
+
+    // Stops initial animations until page loads.
+        &.is-preload {
+            *, *:before, *:after {
+                @include vendor('animation', 'none !important');
+                @include vendor('transition', 'none !important');
+            }
+        }
+
+}
+
+body, input, select, textarea {
+    color: _palette(fg);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15pt;
+    font-weight: 300 !important;
+    letter-spacing: -0.025em;
+    line-height: 1.75em;
+}
+
+a {
+    @include vendor('transition', 'border-color 0.2s ease-in-out');
+    border-bottom: dotted 1px;
+    color: inherit;
+    outline: 0;
+    text-decoration: none;
+
+    &:hover {
+        border-color: transparent;
+    }
+}
+
+/* Wide */
+
+@include breakpoint('<=wide') {
+
+    /* Basic */
+
+        body, input, select, textarea {
+            font-size: 13pt;
+        }
+
+}
+
+/* Normal */
+
+@include breakpoint('<=normal') {
+
+    /* Basic */
+
+        body, input, select, textarea {
+            font-size: 12pt;
+        }
+
+}
+
+/* Mobile */
+
+@include breakpoint('<=mobile') {
+
+    /* Basic */
+
+        body {
+            min-width: 320px;
+        }
+
+        body, input, select, textarea {
+            font-size: 11pt;
+        }
+
+}

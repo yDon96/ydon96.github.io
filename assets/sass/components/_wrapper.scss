@@ -1,0 +1,15 @@
+/* Wrapper */
+
+@include keyframes('wrapper') {
+    0%		{ opacity: 0; }
+    100%	{ opacity: 1; }
+}
+
+#wrapper {
+    @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    width: 100%;
+}
