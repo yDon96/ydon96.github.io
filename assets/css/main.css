@@ -922,8 +922,8 @@ body.is-preload .banner.onload-image-fade-in .image img {
 }
 @media screen and (orientation: portrait) {
   .banner.style1 {
-    -moz-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+    -moz-flex-direction: column;
+    flex-direction: column;
     text-align: center;
   }
   .banner.style1 .content {
