@@ -427,6 +427,15 @@ a:hover {
   top: 0;
   width: 100%;
 }
+#overlay::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 /* Section-Container */
 .section-container {
