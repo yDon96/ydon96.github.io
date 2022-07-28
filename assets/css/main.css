@@ -427,6 +427,15 @@ a:hover {
   top: 0;
   width: 100%;
 }
+#overlay::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 /* Section-Container */
 .section-container {
@@ -922,8 +931,8 @@ body.is-preload .banner.onload-image-fade-in .image img {
 }
 @media screen and (orientation: portrait) {
   .banner.style1 {
-    -moz-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+    -moz-flex-direction: column;
+    flex-direction: column;
     text-align: center;
   }
   .banner.style1 .content {
